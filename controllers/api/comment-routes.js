@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 
-router.get('/', (res, req) =>{
+router.get('/', (req, res) =>{
     Comment.findAll({
         attributes: ['comment_text', 'user_id', 'post_id'],
         order: ['created_at', 'DESC']
